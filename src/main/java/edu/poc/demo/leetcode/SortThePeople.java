@@ -2,6 +2,16 @@ package edu.poc.demo.leetcode;
 
 import java.util.Arrays;
 
+/**
+ * 2418. Sort the People
+ *
+ * <p>You are given an array of strings names, and an array heights that consists of distinct
+ * positive integers. Both arrays are of length n.
+ *
+ * <p>For each index i, names[i] and heights[i] denote the name and height of the ith person.
+ *
+ * <p>Return names sorted in descending order by the people's heights.
+ */
 public class SortThePeople {
 
   public void arrayTest(String[] test) {
