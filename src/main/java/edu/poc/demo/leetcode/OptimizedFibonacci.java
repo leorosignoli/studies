@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class OptimizedFibonacci {
-  
+
   private static final int NTH_NUMBER = 30;
 
   public static void main(String[] args) {
