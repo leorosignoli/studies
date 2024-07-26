@@ -1,5 +1,6 @@
 package edu.poc.demo.leetcode;
 
+import edu.poc.demo.utils.ExecutionMeasure;
 import java.util.Arrays;
 
 /**
@@ -15,10 +16,7 @@ public class MergeSortAnArray {
   public static void main(String[] args) {
     MergeSortAnArray mergeSortAnArray = new MergeSortAnArray();
     int[] arr = {3, 2, 1, 14, 4, 5, 7, 6, 8, 9, 0, 10, 13};
-    int[] sorted = mergeSortAnArray.mergeSort(arr);
-    for (int j : sorted) {
-      System.out.println(j);
-    }
+    ExecutionMeasure.measureExecutionTime(() -> mergeSortAnArray.mergeSort(arr));
   }
 
   private int[] mergeSort(int[] arr) {
