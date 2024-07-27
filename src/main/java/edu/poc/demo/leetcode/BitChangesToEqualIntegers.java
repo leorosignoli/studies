@@ -21,11 +21,9 @@ public class BitChangesToEqualIntegers {
 
     if (n == k) return 0;
 
-    int max = Math.max(n, k);
-
     int counter = 0;
 
-    for (int i = 0; n > 0; i++) {
+    while (n > 0) {
 
       int nRem = n % 2;
       int kRem = k % 2;

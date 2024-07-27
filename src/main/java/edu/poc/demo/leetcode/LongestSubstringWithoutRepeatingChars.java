@@ -26,15 +26,12 @@ public class LongestSubstringWithoutRepeatingChars {
     for (int i = 0; i < s.length(); i++) {
       var subString = s.substring(i);
       Set<Character> chars = new HashSet<>();
-      int temp = 0;
-      for (char c : subString.toCharArray()) {
 
+      for (char c : subString.toCharArray()) {
         if (chars.contains(c)) {
           break;
         }
         chars.add(c);
-        temp++;
-
         max = Math.max(max, chars.size());
       }
     }

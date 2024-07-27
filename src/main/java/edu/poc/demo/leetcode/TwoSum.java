@@ -1,5 +1,6 @@
 package edu.poc.demo.leetcode;
 
+import edu.poc.demo.utils.ExecutionMeasure;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,18 +17,26 @@ import java.util.Map;
  */
 public class TwoSum {
 
-  public int[] twoSum(int[] nums, int target) {
+  public static void main(String[] args) {
+
+    int[] nums = {2, 7, 11, 15, 12, 14, 4, 25, 1};
+    int target = 9;
+    ExecutionMeasure.measureExecutionTime(() -> twoSum(nums, target));
+    ExecutionMeasure.measureExecutionTime(() -> twoSum2(nums, target));
+  }
+
+  public static int[] twoSum(int[] nums, int target) {
     for (int i = 0; i < nums.length; i++) {
 
       for (int j = 0; j < nums.length; j++) {
 
-        if ((i + j) == target) return new int[] {nums[i], nums[j]};
+        if ((nums[i] + nums[j]) == target) return new int[] {i, j};
       }
     }
     return new int[0]; // no solution
   }
 
-  public int[] twoSum2(int[] nums, int target) {
+  public static int[] twoSum2(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
       map.put(nums[i], i);
