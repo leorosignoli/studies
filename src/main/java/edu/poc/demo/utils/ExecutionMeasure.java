@@ -35,10 +35,5 @@ public class ExecutionMeasure {
   @FunctionalInterface
   public interface MeasurableCodeWithResult {
     Object run();
-
-    default void andThen(MeasurableCode after) {
-      run();
-      after.run();
-    }
   }
 }
