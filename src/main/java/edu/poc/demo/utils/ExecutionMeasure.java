@@ -22,6 +22,15 @@ public class ExecutionMeasure {
     LOGGER.info("Execution time: {} nanoseconds, Result: {}", duration, res);
   }
 
+  public static void measureExecutionTime(String methodName, MeasurableCodeWithResult measurable) {
+    long startTime = System.nanoTime();
+    var res = measurable.run();
+    long endTime = System.nanoTime();
+    long duration = (endTime - startTime);
+    LOGGER.info(
+        "Execution time for method {} : {} nanoseconds, Result: {}", methodName, duration, res);
+  }
+
   @FunctionalInterface
   public interface MeasurableCode {
     void run();
