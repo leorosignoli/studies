@@ -66,7 +66,8 @@ public class LongestPalindromicSubstring {
 
     String biggestStr = String.valueOf(s.charAt(0));
 
-    for (int i = 0; i < s.length(); i++) {
+    int i = 0;
+    while (i < s.length()) {
       char currentChar = s.charAt(i);
       String substring = s.substring(i, s.lastIndexOf(currentChar) + 1);
 
@@ -78,6 +79,7 @@ public class LongestPalindromicSubstring {
             substring.substring(
                 0, substring.lastIndexOf(currentChar, substring.lastIndexOf(currentChar) - 1) + 1);
       }
+      i++;
     }
 
     return biggestStr;
