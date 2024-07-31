@@ -26,3 +26,4 @@ replay_pid*
 src/.DS_Stores
 
 /.idea
+*.lst

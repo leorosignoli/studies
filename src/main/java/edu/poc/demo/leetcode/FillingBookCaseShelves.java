@@ -53,10 +53,10 @@ public class FillingBookCaseShelves {
         width +=
             previousBook[
                 thickness]; // Add the thickness (width) of the current book to the current shelf
-                            // width
+        // width
         if (width > shelfWidth)
           break; // If the accumulated width exceeds shelfWidth, break out of the inner loop and go
-                 // to the next number.
+        // to the next number.
         maxHeight =
             Math.max(
                 maxHeight,
