@@ -18,27 +18,22 @@ public class MinSwapsToGroup1sII {
 
         List<Integer> list = new ArrayList<>(Arrays.stream(nums).boxed().toList());
 
+        int min = Integer.MAX_VALUE;
+        int ones = (int) list.stream().filter(i -> i == 1).count();
 
-        int min = Integer.MAX_VALUE ;
 
-        int ones = (int) list.stream().filter(i -> i==1).count();
 
-        list.add(nums[0]);
-
-        for(int i = 0; i < list.size()-ones; i++){
+        for (int i = 0; i < list.size(); i++) {
             int zeros = 0;
             int r = i + ones;
             int l = i;
-
-            while (l <= r  ){
-                if (list.get(l) == 0 ){
+            while (l < r) {
+                if (list.get(l % list.size()) == 0) {
                     zeros++;
                 }
                 l++;
-
             }
             min = Math.min(zeros, min);
-
         }
         return min;
 
