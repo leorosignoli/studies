@@ -33,6 +33,7 @@ public class MiddleOfLinkedList {
       head = head.next;
     }
     return middle;
+    
   }
 
   private static class ListNode {
