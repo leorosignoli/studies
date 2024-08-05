@@ -1,7 +1,6 @@
 package edu.poc.demo.leetcode;
 
 import edu.poc.demo.utils.ExecutionMeasure;
-
 import java.util.Arrays;
 
 /**
@@ -28,7 +27,8 @@ public class MakeTwoArraysEqualsByReversing {
   public static void main(String[] args) {
     ExecutionMeasure.measureExecutionTime(
         () -> canBeEqual(new int[] {1, 2, 3, 4}, new int[] {2, 4, 1, 3}));
-    ExecutionMeasure.measureExecutionTime("sorting approach", () -> sortingApproach(new int[] {1, 2, 3, 4}, new int[] {2, 4, 1, 3}));
+    ExecutionMeasure.measureExecutionTime(
+        "sorting approach", () -> sortingApproach(new int[] {1, 2, 3, 4}, new int[] {2, 4, 1, 3}));
   }
 
   private static boolean canBeEqual(int[] target, int[] arr) {
