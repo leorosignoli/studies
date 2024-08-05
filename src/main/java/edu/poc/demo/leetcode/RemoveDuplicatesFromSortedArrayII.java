@@ -48,12 +48,13 @@ public class RemoveDuplicatesFromSortedArrayII {
   public static void main(String[] args) {
     ExecutionMeasure.measureExecutionTime(
         () -> removeDuplicates(new int[] {0, 0, 1, 1, 1, 1, 2, 3, 3}));
+    ExecutionMeasure.measureExecutionTime(
+            () -> removeDuplicates(new int[] {1,2}));
   }
 
   private static int removeDuplicates(int[] nums) {
 
     int pivot = 1;
-    int evalInt = nums[0];
     int countInt = 1;
     for (int i = 1; i < nums.length; i++) {
       if (nums[i] == nums[i - 1]) {
