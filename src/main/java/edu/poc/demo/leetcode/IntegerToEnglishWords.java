@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 273. Integer to English Words
- * Hard
+ * 273. Integer to English Words Hard
  *
  * <p>Hint Convert a non-negative integer num to its English words representation. Example 1:
  *
