@@ -59,7 +59,7 @@ public class MagicSquaresInGrid {
       }
     }
 
-      return grid[row][col] + grid[row + 1][col + 1] + grid[row + 2][col + 2] == sum
-              && grid[row][col + 2] + grid[row + 1][col + 1] + grid[row + 2][col] == sum;
+    return grid[row][col] + grid[row + 1][col + 1] + grid[row + 2][col + 2] == sum
+        && grid[row][col + 2] + grid[row + 1][col + 1] + grid[row + 2][col] == sum;
   }
 }
