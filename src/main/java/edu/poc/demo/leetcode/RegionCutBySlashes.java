@@ -3,6 +3,7 @@ package edu.poc.demo.leetcode;
 import edu.poc.demo.utils.ExecutionMeasure;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.stream.IntStream;
 
 /**
  * 959. Regions Cut By Slashes Medium
@@ -77,18 +78,18 @@ public class RegionCutBySlashes {
   }
 
   private static int countRegions(int[][] expandedGrid) {
-    int regionCount = 0;
-    int gridSize = expandedGrid.length;
-
-    for (int i = 0; i < gridSize; i++) {
-      for (int j = 0; j < gridSize; j++) {
-        if (expandedGrid[i][j] == 0) {
-          floodFill(expandedGrid, i, j);
-          regionCount++;
-        }
-      }
-    }
-    return regionCount;
+    return (int)
+        IntStream.range(0, expandedGrid.length)
+            .flatMap(
+                i ->
+                    IntStream.range(0, expandedGrid[i].length)
+                        .filter(j -> expandedGrid[i][j] == 0)
+                        .map(
+                            j -> {
+                              floodFill(expandedGrid, i, j);
+                              return 1;
+                            }))
+            .count();
   }
 
   private static void floodFill(int[][] expandedGrid, int row, int col) {
