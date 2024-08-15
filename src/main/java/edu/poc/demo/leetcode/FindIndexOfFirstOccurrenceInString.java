@@ -13,7 +13,6 @@ public class FindIndexOfFirstOccurrenceInString {
             || haystack.charAt(slidingPointer++) != needle.charAt(k)) continue outer;
       }
       return i;
-
     }
     return -1;
   }
