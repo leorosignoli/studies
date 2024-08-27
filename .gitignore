@@ -27,3 +27,7 @@ src/.DS_Stores
 
 /.idea
 *.lst
+target/surefire-reports/TEST-edu.poc.demo.DemoApplicationTests.xml
+target/surefire-reports/edu.poc.demo.DemoApplicationTests.txt
+target/maven-archiver/pom.properties
+target/demo-0.0.1-SNAPSHOT.jar.original
