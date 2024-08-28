@@ -3,6 +3,7 @@ package edu.poc.demo.algorithms;
 import edu.poc.demo.utils.ExecutionMeasure;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -106,6 +107,7 @@ public class Dijkstra {
       Pair currentNode = queue.poll();
       int currentNodeWeight = totalWeight[currentNode.node];
       if (currentNode.node == end) {
+        printPath(previous, start, end);
         return totalWeight[currentNode.node];
       }
 
@@ -122,6 +124,15 @@ public class Dijkstra {
       }
     }
     return -1;
+  }
+
+  private static void printPath(int[] previous, int start, int end) {
+    List<Integer> path = new ArrayList<>();
+    for (int at = end; at != -1; at = previous[at]) {
+      path.add(at);
+    }
+    Collections.reverse(path);
+    System.out.println("Path: " + path);
   }
 
   private static List<Map<Integer, Integer>> buildAdjacencyList(int[][] graph) {
